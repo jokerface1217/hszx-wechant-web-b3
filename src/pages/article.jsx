@@ -74,7 +74,7 @@ export default function ArticlePage(props) {
   }];
   return <div className="min-h-screen bg-gradient-to-b from-red-50 via-white to-red-25">
     {/* 返回顶部按钮 */}
-    {showScrollTop && <Button variant="secondary" size="icon" className="fixed bottom-20 right-4 z-50 rounded-full bg-red-700 text-white shadow-lg" onClick={scrollToTop}>
+    {showScrollTop && <Button variant="secondary" size="icon" className="fixed bottom-4 right-4 z-50 rounded-full bg-red-700 text-white shadow-lg" onClick={scrollToTop}>
         <ArrowUp className="w-5 h-5" />
       </Button>}
 
@@ -154,7 +154,7 @@ export default function ArticlePage(props) {
 
         {/* 配图：高三课堂实景 */}
         <div className="my-4 rounded-lg overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=400&fit=crop" alt="高三学生认真学习" className="w-full h-40 object-cover" />
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=400&fit=crop" alt="高三学生认真学习" className="w-full h-40 object-cover" />
           <p className="text-xs text-gray-500 bg-gray-100 p-2">高三学生备战高考的真实场景</p>
         </div>
 
@@ -169,7 +169,7 @@ export default function ArticlePage(props) {
 
         {/* 配图：选科指导现场 */}
         <div className="my-4 rounded-lg overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?w=800&h=400&fit=crop" alt="选科指导讲座" className="w-full h-40 object-cover" />
+          <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=400&fit=crop" alt="选科指导讲座" className="w-full h-40 object-cover" />
           <p className="text-xs text-gray-500 bg-gray-100 p-2">高校招生老师在为学生做选科指导</p>
         </div>
 
@@ -247,7 +247,7 @@ export default function ArticlePage(props) {
     </div>
 
     {/* 相关推荐 - 高中生家长专用 */}
-    <div className="px-4 pb-24">
+    <div className="px-4 pb-6">
       <h3 className="text-base font-bold text-gray-900 mb-3">高三家长都在看</h3>
       <div className="space-y-3">
         {relatedArticles.map(article => <div key={article.id} className="flex gap-3 p-3 bg-white border border-red-100 rounded-lg shadow-sm active:shadow-md transition-shadow active:scale-[0.98]" onClick={() => console.log('查看文章:', article.title)}>
@@ -260,31 +260,6 @@ export default function ArticlePage(props) {
             </div>
             <ChevronRight className="w-4 h-4 text-red-400 self-center flex-shrink-0" />
           </div>)}
-      </div>
-    </div>
-
-    {/* 底部固定互动栏 - 高中生家长专用 */}
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-red-200 px-4 py-2">
-      <div className="flex items-center justify-around">
-        <Button variant="ghost" size="sm" className={`flex flex-col items-center gap-0.5 h-auto p-1 ${liked ? 'text-red-600' : 'text-gray-600'}`} onClick={handleLike}>
-          <Heart className={`w-5 h-5 ${liked ? 'fill-current' : ''}`} />
-          <span className="text-xs">{likeCount}</span>
-        </Button>
-        
-        <Button variant="ghost" size="sm" className={`flex flex-col items-center gap-0.5 h-auto p-1 ${bookmarked ? 'text-red-600' : 'text-gray-600'}`} onClick={handleBookmark}>
-          <Bookmark className={`w-5 h-5 ${bookmarked ? 'fill-current' : ''}`} />
-          <span className="text-xs">收藏</span>
-        </Button>
-
-        <Button variant="ghost" size="sm" className="flex flex-col items-center gap-0.5 h-auto p-1 text-gray-600" onClick={handleShare}>
-          <Share2 className="w-5 h-5" />
-          <span className="text-xs">分享</span>
-        </Button>
-
-        <Button size="sm" className="flex flex-col items-center gap-0.5 h-auto p-1 bg-red-600 text-white">
-          <Users className="w-5 h-5" />
-          <span className="text-xs">交流群</span>
-        </Button>
       </div>
     </div>
   </div>;
