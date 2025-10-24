@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // @ts-ignore;
 import { Eye, Clock, ChevronRight, ArrowUp, Calendar, Award, BookOpen } from 'lucide-react';
 // @ts-ignore;
-import { Avatar, AvatarFallback, AvatarImage, Badge } from '@/components/ui';
+import { Badge } from '@/components/ui';
 
 export default function ArticlePage(props) {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -77,15 +77,6 @@ export default function ArticlePage(props) {
           <h1 className="text-xl font-bold text-white leading-tight">
             2024新高考政策深度解读：高中生家长必读指南
           </h1>
-        </div>
-      </div>
-      
-      <div className="px-4 py-3 bg-white border-b border-[#FFA500]/20">
-        <div className="flex items-center gap-3">
-          <Avatar className="w-8 h-8">
-            <AvatarImage src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=32&h=32&fit=crop&crop=face" />
-            <AvatarFallback>高</AvatarFallback>
-          </Avatar>
         </div>
       </div>
     </div>
