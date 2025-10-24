@@ -53,20 +53,20 @@ export default function ArticlePage(props) {
     event: '高考正式考试',
     status: '待开始'
   }];
-  return <div className="min-h-screen bg-gradient-to-b from-red-50 via-white to-red-25">
+  return <div className="min-h-screen bg-gradient-to-b from-[#FF0000]/5 via-white to-[#FFA500]/5">
     {/* 返回顶部按钮 */}
-    {showScrollTop && <button className="fixed bottom-4 right-4 z-50 rounded-full bg-red-700 text-white shadow-lg p-3" onClick={scrollToTop}>
+    {showScrollTop && <button className="fixed bottom-4 right-4 z-50 rounded-full bg-[#FF0000] text-white shadow-lg p-3" onClick={scrollToTop}>
         <ArrowUp className="w-5 h-5" />
       </button>}
 
-    {/* 文章头部 - 高中生校园实景 */}
+    {/* 文章头部 - 红橙渐变 */}
     <div className="relative">
-      <div className="h-48 bg-gradient-to-r from-red-700 to-red-800 relative overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=300&fit=crop" alt="高中生课堂" className="w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-red-800/80 to-transparent" />
+      <div className="h-48 bg-gradient-to-r from-[#FF0000] to-[#FFA500] relative overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=300&fit=crop" alt="高中生课堂" className="w-full h-full object-cover opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#FF0000]/80 to-transparent" />
         <div className="absolute bottom-4 left-4 right-4">
           <div className="flex items-center gap-2 mb-2">
-            <Badge className="bg-amber-500 text-white border-0 text-xs">
+            <Badge className="bg-[#FFA500] text-white border-0 text-xs">
               <Award className="w-3 h-3 mr-1" />
               高考必读
             </Badge>
@@ -80,32 +80,19 @@ export default function ArticlePage(props) {
         </div>
       </div>
       
-      <div className="px-4 py-3 bg-white border-b border-red-100">
+      <div className="px-4 py-3 bg-white border-b border-[#FFA500]/20">
         <div className="flex items-center gap-3">
           <Avatar className="w-8 h-8">
             <AvatarImage src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=32&h=32&fit=crop&crop=face" />
             <AvatarFallback>高</AvatarFallback>
           </Avatar>
-          <div>
-            <p className="text-sm font-medium text-gray-900">高考升学指导</p>
-            <div className="flex items-center gap-3 text-xs text-gray-500">
-              <span className="flex items-center gap-1">
-                <Clock className="w-3 h-3" />
-                10-24
-              </span>
-              <span className="flex items-center gap-1">
-                <Eye className="w-3 h-3" />
-                8.9万
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
 
-    {/* 重要时间节点提醒 */}
+    {/* 重要时间节点提醒 - 红橙主题 */}
     <div className="mx-4 mt-4">
-      <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-lg p-4 text-white">
+      <div className="bg-gradient-to-r from-[#FF0000] to-[#FFA500] rounded-lg p-4 text-white">
         <h3 className="font-bold text-sm mb-3 flex items-center">
           <Calendar className="w-4 h-4 mr-2" />
           2025高考重要时间节点
@@ -119,7 +106,7 @@ export default function ArticlePage(props) {
       </div>
     </div>
 
-    {/* 文章正文 - 高中生家长专用内容 */}
+    {/* 文章正文 - 红橙主题内容 */}
     <div className="px-4 py-4">
       <div className="text-base leading-relaxed text-gray-800">
         <p className="mb-4 text-sm">
@@ -133,7 +120,7 @@ export default function ArticlePage(props) {
           <p className="text-xs text-gray-500 bg-gray-100 p-2">高三学生备战高考的真实场景</p>
         </div>
 
-        <h2 className="text-base font-bold text-red-700 mt-5 mb-3 flex items-center">
+        <h2 className="text-base font-bold text-[#FF0000] mt-5 mb-3 flex items-center">
           <BookOpen className="w-5 h-5 mr-2" />
           变化一：选科要求更加严格
         </h2>
@@ -148,7 +135,7 @@ export default function ArticlePage(props) {
           <p className="text-xs text-gray-500 bg-gray-100 p-2">高校招生老师在为学生做选科指导</p>
         </div>
 
-        <h2 className="text-base font-bold text-red-700 mt-5 mb-3 flex items-center">
+        <h2 className="text-base font-bold text-[#FF0000] mt-5 mb-3 flex items-center">
           <Award className="w-5 h-5 mr-2" />
           变化二：强基计划扩容
         </h2>
@@ -157,8 +144,8 @@ export default function ArticlePage(props) {
           数学、物理等基础学科招生名额增加20%，这对理科尖子生是重大利好。
         </p>
 
-        <h2 className="text-base font-bold text-red-700 mt-5 mb-3 flex items-center">
-          <Clock className="w-5 h-5 mr-2" />
+        <h2 className="text-base font-bold text-[#FF0000] mt-5 mb-3 flex items-center">
+          <Calendar className="w-5 h-5 mr-2" />
           变化三：综合素质评价权重提升
         </h2>
         <p className="mb-3 text-sm">
@@ -176,17 +163,17 @@ export default function ArticlePage(props) {
 
     {/* 相关推荐 - 高中资讯 */}
     <div className="px-4 pb-6">
-      <h3 className="text-base font-bold text-gray-900 mb-3">高中资讯</h3>
+      <h3 className="text-base font-bold text-[#FF0000] mb-3">高中资讯</h3>
       <div className="space-y-3">
-        {relatedArticles.map(article => <div key={article.id} className="flex gap-3 p-3 bg-white border border-red-100 rounded-lg shadow-sm active:shadow-md transition-shadow active:scale-[0.98]" onClick={() => console.log('查看文章:', article.title)}>
+        {relatedArticles.map(article => <div key={article.id} className="flex gap-3 p-3 bg-white border border-[#FFA500]/30 rounded-lg shadow-sm active:shadow-md transition-shadow active:scale-[0.98]" onClick={() => console.log('查看文章:', article.title)}>
             <img src={article.image} alt={article.title} className="w-20 h-14 object-cover rounded" />
             <div className="flex-1 min-w-0">
               <h4 className="text-sm font-medium text-gray-900 line-clamp-2">
                 {article.title}
               </h4>
-              <p className="text-xs text-red-600 mt-1">{article.readCount}家长已读</p>
+              <p className="text-xs text-[#FF0000] mt-1">{article.readCount}家长已读</p>
             </div>
-            <ChevronRight className="w-4 h-4 text-red-400 self-center flex-shrink-0" />
+            <ChevronRight className="w-4 h-4 text-[#FFA500] self-center flex-shrink-0" />
           </div>)}
       </div>
     </div>
