@@ -120,10 +120,6 @@ export default function ArticlePage(props) {
               </div>
             </div>
           </div>
-          <Button size="sm" className="bg-red-700 text-white text-xs">
-            <Users className="w-3 h-3 mr-1" />
-            加入群聊
-          </Button>
         </div>
       </div>
     </div>
@@ -209,40 +205,6 @@ export default function ArticlePage(props) {
           <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&h=400&fit=crop" alt="学生参加社会实践" className="w-full h-40 object-cover" />
           <p className="text-xs text-gray-500 bg-gray-100 p-2">高三学生参加高校研学活动</p>
         </div>
-
-        <div className="bg-gradient-to-r from-amber-50 to-red-50 border border-amber-200 rounded-lg p-4 my-5">
-          <h3 className="font-bold text-amber-800 mb-2 text-sm">🎯 高三家长现在就要做的事</h3>
-          <div className="grid grid-cols-2 gap-2 text-xs">
-            <div className="bg-white p-2 rounded border">
-              <div className="font-medium text-red-700">11月重点</div>
-              <div className="text-gray-600">高考报名确认</div>
-            </div>
-            <div className="bg-white p-2 rounded border">
-              <div className="font-medium text-red-700">12月重点</div>
-              <div className="text-gray-600">艺术类统考</div>
-            </div>
-            <div className="bg-white p-2 rounded border">
-              <div className="font-medium text-red-700">1月重点</div>
-              <div className="text-gray-600">期末考试</div>
-            </div>
-            <div className="bg-white p-2 rounded border">
-              <div className="font-medium text-red-700">3月重点</div>
-              <div className="text-gray-600">高考体检</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* 家长交流群入口 */}
-    <div className="mx-4 mb-4">
-      <div className="bg-red-700 text-white rounded-lg p-4 text-center">
-        <h3 className="font-bold mb-2">加入高三家长交流群</h3>
-        <p className="text-xs opacity-90 mb-3">与万名家长一起交流备考经验</p>
-        <Button size="sm" className="bg-white text-red-700 hover:bg-gray-100">
-          <Users className="w-4 h-4 mr-2" />
-          立即加入
-        </Button>
       </div>
     </div>
 
