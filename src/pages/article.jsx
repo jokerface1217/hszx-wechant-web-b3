@@ -1,31 +1,12 @@
 // @ts-ignore;
 import React, { useState, useEffect } from 'react';
 // @ts-ignore;
-import { Heart, Bookmark, Share2, Eye, Clock, ChevronRight, ArrowUp, Calendar, Users, Award, BookOpen } from 'lucide-react';
+import { Eye, Clock, ChevronRight, ArrowUp, Calendar, Award, BookOpen } from 'lucide-react';
 // @ts-ignore;
-import { Button, Avatar, AvatarFallback, AvatarImage, Badge } from '@/components/ui';
+import { Avatar, AvatarFallback, AvatarImage, Badge } from '@/components/ui';
 
 export default function ArticlePage(props) {
-  const [liked, setLiked] = useState(false);
-  const [bookmarked, setBookmarked] = useState(false);
-  const [likeCount, setLikeCount] = useState(892);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const handleLike = () => {
-    setLiked(!liked);
-    setLikeCount(liked ? likeCount - 1 : likeCount + 1);
-  };
-  const handleBookmark = () => {
-    setBookmarked(!bookmarked);
-  };
-  const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: '2024新高考政策深度解读：高中生家长必读指南',
-        text: '高三家长必看！最新高考政策变化全解析',
-        url: window.location.href
-      });
-    }
-  };
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -74,9 +55,9 @@ export default function ArticlePage(props) {
   }];
   return <div className="min-h-screen bg-gradient-to-b from-red-50 via-white to-red-25">
     {/* 返回顶部按钮 */}
-    {showScrollTop && <Button variant="secondary" size="icon" className="fixed bottom-4 right-4 z-50 rounded-full bg-red-700 text-white shadow-lg" onClick={scrollToTop}>
+    {showScrollTop && <button className="fixed bottom-4 right-4 z-50 rounded-full bg-red-700 text-white shadow-lg p-3" onClick={scrollToTop}>
         <ArrowUp className="w-5 h-5" />
-      </Button>}
+      </button>}
 
     {/* 文章头部 - 高中生校园实景 */}
     <div className="relative">
@@ -100,24 +81,22 @@ export default function ArticlePage(props) {
       </div>
       
       <div className="px-4 py-3 bg-white border-b border-red-100">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Avatar className="w-8 h-8">
-              <AvatarImage src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=32&h=32&fit=crop&crop=face" />
-              <AvatarFallback>高</AvatarFallback>
-            </Avatar>
-            <div>
-              <p className="text-sm font-medium text-gray-900">高考升学指导</p>
-              <div className="flex items-center gap-3 text-xs text-gray-500">
-                <span className="flex items-center gap-1">
-                  <Clock className="w-3 h-3" />
-                  10-24
-                </span>
-                <span className="flex items-center gap-1">
-                  <Eye className="w-3 h-3" />
-                  8.9万
-                </span>
-              </div>
+        <div className="flex items-center gap-3">
+          <Avatar className="w-8 h-8">
+            <AvatarImage src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=32&h=32&fit=crop&crop=face" />
+            <AvatarFallback>高</AvatarFallback>
+          </Avatar>
+          <div>
+            <p className="text-sm font-medium text-gray-900">高考升学指导</p>
+            <div className="flex items-center gap-3 text-xs text-gray-500">
+              <span className="flex items-center gap-1">
+                <Clock className="w-3 h-3" />
+                10-24
+              </span>
+              <span className="flex items-center gap-1">
+                <Eye className="w-3 h-3" />
+                8.9万
+              </span>
             </div>
           </div>
         </div>
@@ -178,19 +157,6 @@ export default function ArticlePage(props) {
           数学、物理等基础学科招生名额增加20%，这对理科尖子生是重大利好。
         </p>
 
-        <div className="bg-red-50 border border-red-200 rounded-lg p-3 my-4">
-          <p className="text-red-800 font-medium mb-2 text-sm flex items-center">
-            <Users className="w-4 h-4 mr-2" />
-            家长行动清单：
-          </p>
-          <ul className="space-y-1 text-xs text-red-700">
-            <li>• 立即检查孩子选科是否符合目标专业要求</li>
-            <li>• 关注各高校强基计划报名时间（3-4月）</li>
-            <li>• 收集目标院校近三年录取分数线</li>
-            <li>• 建立高考倒计时提醒</li>
-          </ul>
-        </div>
-
         <h2 className="text-base font-bold text-red-700 mt-5 mb-3 flex items-center">
           <Clock className="w-5 h-5 mr-2" />
           变化三：综合素质评价权重提升
@@ -208,9 +174,9 @@ export default function ArticlePage(props) {
       </div>
     </div>
 
-    {/* 相关推荐 - 高中生家长专用 */}
+    {/* 相关推荐 - 高中资讯 */}
     <div className="px-4 pb-6">
-      <h3 className="text-base font-bold text-gray-900 mb-3">高三家长都在看</h3>
+      <h3 className="text-base font-bold text-gray-900 mb-3">高中资讯</h3>
       <div className="space-y-3">
         {relatedArticles.map(article => <div key={article.id} className="flex gap-3 p-3 bg-white border border-red-100 rounded-lg shadow-sm active:shadow-md transition-shadow active:scale-[0.98]" onClick={() => console.log('查看文章:', article.title)}>
             <img src={article.image} alt={article.title} className="w-20 h-14 object-cover rounded" />
