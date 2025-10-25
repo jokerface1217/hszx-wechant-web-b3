@@ -53,7 +53,7 @@ export default function ArticlePage(props) {
     event: '高考正式考试',
     status: '待开始'
   }];
-  return <div className="min-h-screen bg-gradient-to-b from-[#FF0000]/5 via-white to-[#FFA500]/5">
+  return <div className="min-h-screen bg-gradient-to-b from-[#FF0000]/3 via-white to-[#FFA500]/3">
     {/* 返回顶部按钮 */}
     {showScrollTop && <button className="fixed bottom-4 right-4 z-50 rounded-full bg-[#FF0000] text-white shadow-lg p-3" onClick={scrollToTop}>
         <ArrowUp className="w-5 h-5" />
@@ -77,22 +77,6 @@ export default function ArticlePage(props) {
           <h1 className="text-xl font-bold text-white leading-tight">
             2024新高考政策深度解读：高中生家长必读指南
           </h1>
-        </div>
-      </div>
-    </div>
-
-    {/* 重要时间节点提醒 - 红橙主题 */}
-    <div className="mx-4 mt-4">
-      <div className="bg-gradient-to-r from-[#FF0000] to-[#FFA500] rounded-lg p-4 text-white">
-        <h3 className="font-bold text-sm mb-3 flex items-center">
-          <Calendar className="w-4 h-4 mr-2" />
-          2025高考重要时间节点
-        </h3>
-        <div className="grid grid-cols-4 gap-2">
-          {importantDates.map((date, index) => <div key={index} className="text-center">
-              <div className="text-xs opacity-90">{date.month}</div>
-              <div className="text-xs font-bold">{date.event}</div>
-            </div>)}
         </div>
       </div>
     </div>
@@ -148,6 +132,22 @@ export default function ArticlePage(props) {
         <div className="my-4 rounded-lg overflow-hidden">
           <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&h=400&fit=crop" alt="学生参加社会实践" className="w-full h-40 object-cover" />
           <p className="text-xs text-gray-500 bg-gray-100 p-2">高三学生参加高校研学活动</p>
+        </div>
+      </div>
+    </div>
+
+    {/* 2025高考重要时间节点 - 移到下方 */}
+    <div className="mx-4 mb-4">
+      <div className="bg-gradient-to-r from-[#FF0000] to-[#FFA500] rounded-lg p-4 text-white">
+        <h3 className="font-bold text-sm mb-3 flex items-center">
+          <Calendar className="w-4 h-4 mr-2" />
+          2025高考重要时间节点
+        </h3>
+        <div className="grid grid-cols-4 gap-2">
+          {importantDates.map((date, index) => <div key={index} className="text-center">
+              <div className="text-xs opacity-90">{date.month}</div>
+              <div className="text-xs font-bold">{date.event}</div>
+            </div>)}
         </div>
       </div>
     </div>
